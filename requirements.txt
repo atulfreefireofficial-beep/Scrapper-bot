@@ -1,0 +1,5 @@
+pyrogram>=2.0.0
+pytgcalls>=5.0.0
+tgcrypto>=1.2.3
+aiohttp>=3.8.0
+asyncio>=3.4.3
