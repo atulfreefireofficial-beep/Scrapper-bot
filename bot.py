@@ -9,9 +9,9 @@ from config import API_ID, API_HASH, SESSION_STRING, BOT_TOKEN, ADMIN_IDS, DEFAU
 
 bot = Client(
     "bot_session",
-    api_id=35384207,
-    api_hash="09c4bc9de62a417ccdd0c69b33912515"
-    bot_token="8442090009:AAEqBxqodGpGM1cG_iFJVdqS_IUdXMksUsI"
+    api_id= 35384207
+    api_hash= "09c4bc9de62a417ccdd0c69b33912515"
+    bot_token= "8442090009:AAEqBxqodGpGM1cG_iFJVdqS_IUdXMksUsI"
     workers=1000,
     parse_mode=ParseMode.HTML
 )
