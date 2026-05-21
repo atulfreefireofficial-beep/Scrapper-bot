@@ -11,7 +11,7 @@ bot = Client(
     "bot_session",
     api_id=35384207,
     api_hash="09c4bc9de62a417ccdd0c69b33912515",
-    bot_token="8442090009:AAEqBxqodGpGM1cG_iFJVdqS_IUdXMksUsI"
+    bot_token="8442090009:AAEqBxqodGpGM1cG_iFJVdqS_IUdXMksUsI",
     workers=1000,
     parse_mode=ParseMode.HTML
 )
