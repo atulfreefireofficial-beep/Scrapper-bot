@@ -148,8 +148,8 @@ async def scr_cmd(client, message):
     
     progress_msg = await message.reply_text(
         "🔄 𝙎𝙘𝙧𝙖𝙥𝙞𝙣𝙜 𝙞𝙣 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨...\n\n"
-        f"📢 𝘾𝙝𝙖𝙣𝙣𝙚𝙡: `{channel_username}`\n"
-        f"🔢 𝙇𝙞𝙢𝙞𝙩: `{limit}`\n"
+        f"📢 𝘾𝙝𝙖𝙣𝙣𝙚𝙡: {channel_username}\n"
+        f"🔢 𝙇𝙞𝙢𝙞𝙩: {limit}\n"
         "⏳ 𝙋𝙡𝙚𝙖𝙨𝙚 𝙬𝙖𝙞𝙩..."
     )
     
@@ -163,9 +163,9 @@ async def scr_cmd(client, message):
         
         caption = (
             f"✅ 𝘾𝘾 𝙎𝙘𝙧𝙖𝙥𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮!\n\n"
-            f"📢 𝙎𝙤𝙪𝙧𝙘𝙚: `{channel_username}`\n"
-            f"💳 𝘼𝙢𝙤𝙪𝙣𝙩: `{len(unique_messages)}`\n"
-            f"🔄 𝘿𝙪𝙥𝙡𝙞𝙘𝙖𝙩𝙚𝙨 𝙍𝙚𝙢𝙤𝙫𝙚𝙙: `{duplicates_removed}`\n"
+            f"📢 𝙎𝙤𝙪𝙧𝙘𝙚: {channel_username}\n"
+            f"💳 𝘼𝙢𝙤𝙪𝙣𝙩: {len(unique_messages)}\n"
+            f"🔄 𝘿𝙪𝙥𝙡𝙞𝙘𝙖𝙩𝙚𝙨 𝙍𝙚𝙢𝙤𝙫𝙚𝙙: {duplicates_removed}\n"
             f"👤 𝙍𝙚𝙦𝙪𝙚𝙨𝙩𝙚𝙙 𝙗𝙮: {message.from_user.mention}"
         )
         
@@ -198,8 +198,8 @@ async def start_cmd(client, message):
         f"🤖 𝙄'𝙢 𝙖 𝘾𝙧𝙚𝙙𝙞𝙩 𝘾𝙖𝙧𝙙 𝙎𝙘𝙧𝙖𝙥𝙚𝙧 𝘽𝙤𝙩\n"
         f"💎 𝙋𝙤𝙬𝙚𝙧𝙛𝙪𝙡 & 𝙁𝙖𝙨𝙩 𝙎𝙘𝙧𝙖𝙥𝙞𝙣𝙜\n\n"
         f"⚙️ 𝘾𝙪𝙧𝙧𝙚𝙣𝙩 𝙎𝙚𝙩𝙩𝙞𝙣𝙜𝙨:\n"
-        f"• 𝙈𝙖𝙭 𝙇𝙞𝙢𝙞𝙩: `{max_limit}`\n"
-        f"• 𝙔𝙤𝙪𝙧 𝙍𝙤𝙡𝙚: `{'𝘼𝙙𝙢𝙞𝙣 👑' if is_admin else '𝙐𝙨𝙚𝙧 👤'}`\n\n"
+        f"• 𝙈𝙖𝙭 𝙇𝙞𝙢𝙞𝙩: {max_limit`\n"
+        f"• 𝙔𝙤𝙪𝙧 𝙍𝙤𝙡𝙚: {'𝘼𝙙𝙢𝙞𝙣 👑' if is_admin else '𝙐𝙨𝙚𝙧 👤'}`\n\n"
         f"🔽 𝙐𝙨𝙚 𝙗𝙪𝙩𝙩𝙤𝙣𝙨 𝙗𝙚𝙡𝙤𝙬 𝙩𝙤 𝙣𝙖𝙫𝙞𝙜𝙖𝙩𝙚!"
     )
     
