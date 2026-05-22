@@ -644,8 +644,8 @@ async def handle_scrape_input(client, message):
                 get_live_emoji('user'), message.from_user.mention
             )
                 
-                await progress_msg.delete()
-                await client.send_document(
+            await progress_msg.delete()
+            await client.send_document(
                     message.chat.id, 
                     file_name, 
                     caption=caption, 
