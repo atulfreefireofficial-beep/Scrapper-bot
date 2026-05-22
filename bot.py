@@ -624,15 +624,25 @@ async def handle_scrape_input(client, message):
                 with open(file_name, 'w', encoding='utf-8') as f:
                     f.write("\n".join(unique_messages))
                 
-                caption = (
-                    f"{get_live_emoji('success')} 𝘾𝘾 𝙎𝙘𝙧𝙖𝙥𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮!\n\n"
-                    f"{get_live_emoji('channel')} 𝙎𝙤𝙪𝙧𝙘𝙚: `{channel_username}`\n"
-                    f"{get_live_emoji('card')} 𝘼𝙢𝙤𝙪𝙣𝙩: `{len(unique_messages)}`\n"
-                    f"{get_live_emoji('scrape')} 𝘿𝙪𝙥𝙡𝙞𝙘𝙖𝙩𝙚𝙨: `{duplicates_removed}`\n"
-                    f"{f'{get_live_emoji(\"bin\")} 𝘽𝙄𝙉: `{bin_filter}`' if bin_filter else ''}\n"
-                    f"{f'{get_live_emoji(\"country\")} 𝘾𝙤𝙪𝙣𝙩𝙧𝙮: `{country_filter}`' if country_filter else ''}\n"
-                    f"{get_live_emoji('user')} 𝙍𝙚𝙦𝙪𝙚𝙨𝙩𝙚𝙙 𝙗𝙮: {message.from_user.mention}"
-                )
+            # Build conditional lines
+            bin_line = f"{get_live_emoji('bin')} 𝘽𝙄𝙉: `{bin_filter}`\n" if bin_filter else ""
+            country_line = f"{get_live_emoji('country')} 𝘾𝙤𝙪𝙣𝙩𝙧𝙮: `{country_filter}`\n" if country_filter else ""
+
+            caption = (
+                "{} 𝘾𝘾 𝙎𝙘𝙧𝙖𝙥𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮!\n\n"
+                "{} 𝙎𝙤𝙪𝙧𝙘𝙚: `{}`\n"
+                "{} 𝘼𝙢𝙤𝙪𝙣𝙩: `{}`\n"
+                "{} 𝘿𝙪𝙥𝙡𝙞𝙘𝙖𝙩𝙚𝙨: `{}`\n"
+                "{}{}"
+                "{} 𝙍𝙚𝙦𝙪𝙚𝙨𝙩𝙚𝙙 𝙗𝙮: {}"
+            ).format(
+                get_live_emoji('success'),
+                get_live_emoji('channel'), channel_username,
+                get_live_emoji('card'), len(unique_messages),
+                get_live_emoji('scrape'), duplicates_removed,
+                bin_line, country_line,
+                get_live_emoji('user'), message.from_user.mention
+            )
                 
                 await progress_msg.delete()
                 await client.send_document(
