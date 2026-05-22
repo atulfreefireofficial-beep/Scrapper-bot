@@ -651,7 +651,7 @@ async def handle_scrape_input(client, message):
                     caption=caption, 
                     reply_markup=get_main_menu(user_id in ADMIN_IDS)
                 )
-                os.remove(file_name)
+            os.remove(file_name)
             else:
                 await progress_msg.delete()
                 await message.reply_text(
