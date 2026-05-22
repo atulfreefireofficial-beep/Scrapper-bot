@@ -652,7 +652,7 @@ async def handle_scrape_input(client, message):
                     reply_markup=get_main_menu(user_id in ADMIN_IDS)
                 )
             os.remove(file_name)
-                else:
+            else:
                 await progress_msg.delete()
                 await message.reply_text(
                     f"{get_live_emoji('error')} 𝙉𝙤 𝘾𝙧𝙚𝙙𝙞𝙩 𝘾𝙖𝙧𝙙𝙨 𝙁𝙤𝙪𝙣𝙙!", 
