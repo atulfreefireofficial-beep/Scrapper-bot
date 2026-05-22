@@ -598,20 +598,19 @@ async def handle_scrape_input(client, message):
                 channel = channel.split("t.me/")[-1]
             channel_username = channel.lstrip('@')
             
-# Instead of f-string
-progress_msg = await message.reply_text(
-    "{} 𝙎𝙘𝙧𝙖𝙥𝙞𝙣𝙜 𝙞𝙣 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨...\n\n"
-    "{} 𝘾𝙝𝙖𝙣𝙣𝙚𝙡: `{}`\n"
-    "{} 𝙇𝙞𝙢𝙞𝙩: `{}`\n"
-    "{}{}"
-    "{} 𝙋𝙡𝙚𝙖𝙨𝙚 𝙬𝙖𝙞𝙩...".format(
-        get_live_emoji('scrape'),
-        get_live_emoji('channel'), channel_username,
-        get_live_emoji('card'), amount,
-        bin_line, country_line,
-        get_live_emoji('clock')
-    )
-)
+            progress_msg = await message.reply_text(
+                "{} 𝙎𝙘𝙧𝙖𝙥𝙞𝙣𝙜 𝙞𝙣 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨...\n\n"
+                "{} 𝘾𝙝𝙖𝙣𝙣𝙚𝙡: `{}`\n"
+                "{} 𝙇𝙞𝙢𝙞𝙩: `{}`\n"
+                "{}{}"
+                "{} 𝙋𝙡𝙚𝙖𝙨𝙚 𝙬𝙖𝙞𝙩...".format(
+                    get_live_emoji('scrape'),
+                    get_live_emoji('channel'), channel_username,
+                    get_live_emoji('card'), amount,
+                    bin_line, country_line,
+                    get_live_emoji('clock')
+                )
+            )
             
             scrapped_results = await scrape_messages(
                 user, channel_username, amount, 
